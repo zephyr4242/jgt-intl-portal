@@ -1,0 +1,454 @@
+/***************** button开始 *****************/
+// 小字体
+$fs_small: 12px;
+
+// 中等字体大小
+$fs_normal: 14px;
+
+a {
+  @include color(A3);
+}
+
+// 通用样式
+.color_jgt {
+  @include color(A10);
+}
+
+.fap {
+  /***************** laytou开始 *****************/
+  // 操作区域
+  .fap-opts {
+    box-sizing: border-box;
+    height: 64px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    @include backgroundColor(A2);
+
+    // 左侧操作区
+    .fap-opts__left {
+      display: flex;
+      button.el-button {
+        min-width: 60px;
+      }
+    }
+    // 右侧操作区
+    .fap-opts__right {
+      display: relative;
+
+      button.el-button {
+        margin-left: 16px;
+        // margin: 0 8px;
+        :last-child{
+          margin-right: 0;
+        }
+      }
+
+      .fap-opts__batch {
+        // 批量操作下拉框
+        position: absolute;
+        // background: #fff;
+        @include backgroundColor(A2);
+        z-index: 5;
+        font-size: $fs_normal;
+        line-height: 20px;
+        top: 54px;
+        right: 24px;
+        box-shadow: 0px 2px 12px 0px rgb(0 0 0 / 10%);
+        border: 1px solid #ebe8e2;
+        @include borderColor(A2h);
+        padding: 16px;
+
+        .fap-opts__batch--btn {
+          cursor: pointer;
+          &:hover {
+            @include color(A3);
+          }
+        }
+
+        :not(.fap-opts__batch--btn:nth-last-of-type(1)) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  // 表格容器样式
+  .fap-table {
+    width: 100%;
+    .btn-expand {
+      @include color(A10);
+      background: transparent;
+      font-size: $fs_small;
+      cursor: pointer;
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 2px;
+
+      &.expanded {
+        @include backgroundColor(A10);
+        @include color(A2);
+      }
+
+      &:hover {
+        @include backgroundColor(A10);
+        @include color(A2);
+      }
+    }
+  }
+
+  // 常见行上下边距20px
+  .fap-rows .el-row {
+    margin: 20px 0;
+  }
+
+  /***************** laytou结束 *****************/
+
+
+
+  /***************** 动效开始 *****************/
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  /***************** 动效结束 *****************/
+
+  /***************** input开始 *****************/
+
+  .el-input {
+    font-size: $fs_small;
+    line-height: 20px;
+    box-sizing: border-box;
+
+    // 禁用状态
+    &.is-disabled {
+      opacity: 0.4;
+      .el-input__inner.is-disabled {
+        cursor: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYwLjEgKDg4MTMzKSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5pY29uL+WFs+mXreWkh+S7vTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMTAwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIiBpZD0ibGluZWFyR3JhZGllbnQtMSI+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNERUNFQTgiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iI0JEQTM3MyIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJpY29uL+WFs+mXreWkh+S7vSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjI4IiBmaWxsPSIjRDhEOEQ4IiBvcGFjaXR5PSIwIj4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS0yIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPjwvcmVjdD4KICAgICAgICA8L2c+CiAgICAgICAgPGcgaWQ9ImRpc2FibGUiIGZpbGw9InVybCgjbGluZWFyR3JhZGllbnQtMSkiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik04LDAgQzEyLjQxODI3OCwwIDE2LDMuNTgxNzIyIDE2LDggQzE2LDEyLjQxODI3OCAxMi40MTgyNzgsMTYgOCwxNiBDMy41ODE3MjIsMTYgMCwxMi40MTgyNzggMCw4IEMwLDMuNTgxNzIyIDMuNTgxNzIyLDAgOCwwIFogTTMuMTMwNzMxNjYsNC40OTQ4NDk0OCBMMy4wODQyNTc1OCw0LjU1ODgzMzAyIEMyLjQwMTAwMTE2LDUuNTMzMDY1OTEgMiw2LjcxOTcwMzUzIDIsOCBDMiwxMS4zMTM3MDg1IDQuNjg2MjkxNSwxNCA4LDE0IEM5LjMwODgxNjgyLDE0IDEwLjUxOTc1NTYsMTMuNTgwOTM0MiAxMS41MDU5NTY2LDEyLjg2OTY2MjEgQzExLjQyOTE5NDIsMTIuODI1OTY5OSAxMS4zNTc3MDI0LDEyLjc3MTkxNiAxMS4yOTI4OTMyLDEyLjcwNzEwNjggTDMuMjkyODkzMjIsNC43MDcxMDY3OCBDMy4yMjgwODM5OSw0LjY0MjI5NzU1IDMuMTc0MDMwMTQsNC41NzA4MDU3OCAzLjEzMDczMTY2LDQuNDk0ODQ5NDggWiBNOCwyIEM2LjY5MTE4MzE4LDIgNS40ODAyNDQ0NCwyLjQxOTA2NTg1IDQuNDk0MDQzNDMsMy4xMzAzMzc4NyBDNC41NzA4MDU3OCwzLjE3NDAzMDE0IDQuNjQyMjk3NTUsMy4yMjgwODM5OSA0LjcwNzEwNjc4LDMuMjkyODkzMjIgTDEyLjcwNzEwNjgsMTEuMjkyODkzMiBDMTIuNzcxOTE2LDExLjM1NzcwMjQgMTIuODI1OTY5OSwxMS40MjkxOTQyIDEyLjg2OTI2ODMsMTEuNTA1MTUwNSBDMTMuNTgwOTM0MiwxMC41MTk3NTU2IDE0LDkuMzA4ODE2ODIgMTQsOCBDMTQsNC42ODYyOTE1IDExLjMxMzcwODUsMiA4LDIgWiIgaWQ9IuW9oueKtue7k+WQiCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+),
+          auto !important;
+      }
+    }
+  }
+
+  .el-input.is-disabled .el-input__inner,
+  .el-input.is-disabled .el-input__icon {
+    cursor: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYwLjEgKDg4MTMzKSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5pY29uL+WFs+mXreWkh+S7vTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMTAwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIiBpZD0ibGluZWFyR3JhZGllbnQtMSI+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNERUNFQTgiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iI0JEQTM3MyIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJpY29uL+WFs+mXreWkh+S7vSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjI4IiBmaWxsPSIjRDhEOEQ4IiBvcGFjaXR5PSIwIj4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS0yIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPjwvcmVjdD4KICAgICAgICA8L2c+CiAgICAgICAgPGcgaWQ9ImRpc2FibGUiIGZpbGw9InVybCgjbGluZWFyR3JhZGllbnQtMSkiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik04LDAgQzEyLjQxODI3OCwwIDE2LDMuNTgxNzIyIDE2LDggQzE2LDEyLjQxODI3OCAxMi40MTgyNzgsMTYgOCwxNiBDMy41ODE3MjIsMTYgMCwxMi40MTgyNzggMCw4IEMwLDMuNTgxNzIyIDMuNTgxNzIyLDAgOCwwIFogTTMuMTMwNzMxNjYsNC40OTQ4NDk0OCBMMy4wODQyNTc1OCw0LjU1ODgzMzAyIEMyLjQwMTAwMTE2LDUuNTMzMDY1OTEgMiw2LjcxOTcwMzUzIDIsOCBDMiwxMS4zMTM3MDg1IDQuNjg2MjkxNSwxNCA4LDE0IEM5LjMwODgxNjgyLDE0IDEwLjUxOTc1NTYsMTMuNTgwOTM0MiAxMS41MDU5NTY2LDEyLjg2OTY2MjEgQzExLjQyOTE5NDIsMTIuODI1OTY5OSAxMS4zNTc3MDI0LDEyLjc3MTkxNiAxMS4yOTI4OTMyLDEyLjcwNzEwNjggTDMuMjkyODkzMjIsNC43MDcxMDY3OCBDMy4yMjgwODM5OSw0LjY0MjI5NzU1IDMuMTc0MDMwMTQsNC41NzA4MDU3OCAzLjEzMDczMTY2LDQuNDk0ODQ5NDggWiBNOCwyIEM2LjY5MTE4MzE4LDIgNS40ODAyNDQ0NCwyLjQxOTA2NTg1IDQuNDk0MDQzNDMsMy4xMzAzMzc4NyBDNC41NzA4MDU3OCwzLjE3NDAzMDE0IDQuNjQyMjk3NTUsMy4yMjgwODM5OSA0LjcwNzEwNjc4LDMuMjkyODkzMjIgTDEyLjcwNzEwNjgsMTEuMjkyODkzMiBDMTIuNzcxOTE2LDExLjM1NzcwMjQgMTIuODI1OTY5OSwxMS40MjkxOTQyIDEyLjg2OTI2ODMsMTEuNTA1MTUwNSBDMTMuNTgwOTM0MiwxMC41MTk3NTU2IDE0LDkuMzA4ODE2ODIgMTQsOCBDMTQsNC42ODYyOTE1IDExLjMxMzcwODUsMiA4LDIgWiIgaWQ9IuW9oueKtue7k+WQiCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+),
+      auto !important;
+    opacity: 1;
+  }
+
+  /***************** input结束 *****************/
+
+
+
+  /***************** radio开始 *****************/
+  .el-radio__input.is-checked + .el-radio__label {
+    // @include color(A10);
+  }
+
+  .el-radio__input.is-checked .el-radio__inner {
+    // @include borderColor(A10);
+    // @include backgroundColor(A2);
+  }
+
+  .el-radio__input .el-radio__inner:hover {
+    // @include borderColor(A10);
+  }
+
+  /***************** radio结束 *****************/
+
+  .el-checkbox__label {
+    vertical-align: middle;
+  }
+
+  /***************** checkbox结束 *****************/
+
+  /***************** scrollbar开始 *****************/
+  span.el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+  /***************** scrollbar结束 *****************/
+
+  /***************** tree开始 *****************/
+  .el-tree-node__content {
+    margin: 8px 0;
+  }
+  /***************** tree结束 *****************/
+
+  /***************** form开始 *****************/
+  // 去掉必填校验的*号
+  .el-form-item__label:before {
+    content: "" !important;
+  }
+  /***************** form结束 *****************/
+
+  /***************** table开始 *****************/
+  // 去掉必填校验的*号
+  .el-form-item__label:before {
+    content: "" !important;
+  }
+
+  /***************** table结束 *****************/
+}
+
+/***************** table开始 *****************/
+// 表头
+div.el-table th{
+    @include backgroundColor(table-header-bg);
+}
+
+div.el-table th div.cell{
+    @include color(table-header-text);
+}
+
+// 表格内文字
+div.el-table td div.cell {
+  @include color(table-text);
+  line-height: 18px;
+}
+
+// 斑马纹
+div.el-table--striped .el-table__body tr.el-table__row--striped td{
+    @include backgroundColor(table-striped-bg);
+
+}
+
+div.el-table--enable-row-hover .el-table__body tr:hover>td {
+    @include backgroundColor(A2h);
+}
+
+// 内嵌表格的padding删除
+td.el-table__expanded-cell[class*="cell"] {
+  padding: 0px !important;
+}
+
+// 内嵌表格样式名称
+.inner-table {
+  .inner-table-item {
+    padding: 16px 12px;
+    // background-color: #f4f4f4;
+    @include backgroundColor(A1);
+  }
+  table,
+  tr,
+  td {
+    border-collapse: collapse; //不加上这个会重合边框
+    border: none;
+  }
+  tr:nth-child(2n + 3) {
+    @include backgroundColor(A2);
+  }
+  tr:nth-child(2n) {
+    @include backgroundColor(A11);
+  }
+  tr:nth-child(2n + 1):hover > td {
+    @include backgroundColor(A2h);
+  }
+  tr:nth-child(2n):hover > td {
+    @include backgroundColor(A2h);
+  }
+  th {
+    @include backgroundColor(A14O1,1);
+    @include color(A15,1);
+    @include borderColor(A11,1)
+  }
+}
+
+.inner-table.nostripe {
+  button.el-button {
+    line-height: 12px;
+    display: inline-block;
+  }
+  .inner-shadow {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    height: 3px;
+    margin-bottom: 1px;
+  }
+  .inner-table-item {
+    padding: 16px 12px;
+  }
+  
+  table,
+  tr,
+  td {
+    border-collapse: collapse; //不加上这个会重合边框
+    // border: 1px solid;
+    // @include borderColor(A14);
+  }
+  // td {
+  //   // background-color: #fff !important;
+  //   // @include backgroundColor(A11);
+  // }
+  tr:nth-child(2n + 3) > td {
+    @include backgroundColor(A2);
+  }
+  tr:nth-child(2n) > td {
+    @include backgroundColor(A11);
+  }
+  tr:nth-child(2n + 1):hover > td {
+    @include backgroundColor(A2h);
+  }
+  tr:nth-child(2n):hover > td {
+    @include backgroundColor(A2h);
+  }
+  th {
+    // background-color: #ebe8e2 !important;
+    // color: #38383b !important;
+    @include backgroundColor(A14O1);
+    @include color(A6);
+    border: 1px solid;
+    @include borderColor(A14O1);
+  }
+}
+
+.text-right-force {
+  text-align: left !important;
+}
+td.text-right-force {
+  padding-left: 10px !important;
+}
+
+.text-left-force {
+  text-align: left !important;
+}
+
+.innerTablePadding {
+  padding: 0 8px !important;
+}
+
+//   表格内的第二行数据
+.table-second-row {
+  color: #838383;
+}
+
+.el-table__body-wrapper.is-scrolling-right {
+  overflow-x: hidden;
+}
+
+/***************** table结束 *****************/
+// 不换行省略
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/***************** pagination开始 *****************/
+
+.el-pagination button:disabled {
+  cursor: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYwLjEgKDg4MTMzKSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5pY29uL+WFs+mXreWkh+S7vTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMTAwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIiBpZD0ibGluZWFyR3JhZGllbnQtMSI+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNERUNFQTgiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iI0JEQTM3MyIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJpY29uL+WFs+mXreWkh+S7vSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjI4IiBmaWxsPSIjRDhEOEQ4IiBvcGFjaXR5PSIwIj4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS0yIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPjwvcmVjdD4KICAgICAgICA8L2c+CiAgICAgICAgPGcgaWQ9ImRpc2FibGUiIGZpbGw9InVybCgjbGluZWFyR3JhZGllbnQtMSkiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik04LDAgQzEyLjQxODI3OCwwIDE2LDMuNTgxNzIyIDE2LDggQzE2LDEyLjQxODI3OCAxMi40MTgyNzgsMTYgOCwxNiBDMy41ODE3MjIsMTYgMCwxMi40MTgyNzggMCw4IEMwLDMuNTgxNzIyIDMuNTgxNzIyLDAgOCwwIFogTTMuMTMwNzMxNjYsNC40OTQ4NDk0OCBMMy4wODQyNTc1OCw0LjU1ODgzMzAyIEMyLjQwMTAwMTE2LDUuNTMzMDY1OTEgMiw2LjcxOTcwMzUzIDIsOCBDMiwxMS4zMTM3MDg1IDQuNjg2MjkxNSwxNCA4LDE0IEM5LjMwODgxNjgyLDE0IDEwLjUxOTc1NTYsMTMuNTgwOTM0MiAxMS41MDU5NTY2LDEyLjg2OTY2MjEgQzExLjQyOTE5NDIsMTIuODI1OTY5OSAxMS4zNTc3MDI0LDEyLjc3MTkxNiAxMS4yOTI4OTMyLDEyLjcwNzEwNjggTDMuMjkyODkzMjIsNC43MDcxMDY3OCBDMy4yMjgwODM5OSw0LjY0MjI5NzU1IDMuMTc0MDMwMTQsNC41NzA4MDU3OCAzLjEzMDczMTY2LDQuNDk0ODQ5NDggWiBNOCwyIEM2LjY5MTE4MzE4LDIgNS40ODAyNDQ0NCwyLjQxOTA2NTg1IDQuNDk0MDQzNDMsMy4xMzAzMzc4NyBDNC41NzA4MDU3OCwzLjE3NDAzMDE0IDQuNjQyMjk3NTUsMy4yMjgwODM5OSA0LjcwNzEwNjc4LDMuMjkyODkzMjIgTDEyLjcwNzEwNjgsMTEuMjkyODkzMiBDMTIuNzcxOTE2LDExLjM1NzcwMjQgMTIuODI1OTY5OSwxMS40MjkxOTQyIDEyLjg2OTI2ODMsMTEuNTA1MTUwNSBDMTMuNTgwOTM0MiwxMC41MTk3NTU2IDE0LDkuMzA4ODE2ODIgMTQsOCBDMTQsNC42ODYyOTE1IDExLjMxMzcwODUsMiA4LDIgWiIgaWQ9IuW9oueKtue7k+WQiCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+),
+    auto !important;
+}
+
+/***************** pagination结束 *****************/
+/***************** input结束 *****************/
+div.el-input {
+  margin-right: 16px;
+}
+input.el-input__inner {
+  border-radius: 2px;
+}
+/***************** input结束 *****************/
+
+/***************** d2admin菜单开始 *****************/
+.el-menu.el-menu--inline > .el-menu-item {
+  height: 36px !important;
+  line-height: 36px !important;
+  span.icon-dot{
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    background: transparent;
+    border-radius: 50%;
+    margin-left: 6px;
+    margin-top: -10px;
+    @include backgroundColor(A20, 1);
+  }
+}
+
+/***************** d2admin菜单结束 *****************/
+// 忘记密码框
+.fap {
+  .reset-psd-formBody {
+    .sendCode {
+      position: absolute;
+      font-size: 12px;
+      top: 5px;
+      &.el-button {
+        @include color(A10, 1);
+        @include backgroundColor(A2,1);
+      }
+    }
+
+    .el-form {
+      padding: 0 !important;
+      @include backgroundColor(A2,1);
+
+      .el-form-item__label {
+        padding-right: 20px !important;
+      }
+    }
+  }
+}
+// 输入密码框
+.fap .inputPwd {
+  .el-form {
+    padding: 0 !important;
+    background: #fff !important;
+
+    .el-form-item__label {
+      padding-right: 20px !important;
+    }
+  }
+
+  .el-button.el-button--text.inputPwd-forget {
+    @include backgroundColor(A2);
+    @include color(A10);
+
+    span {
+      position: absolute;
+      right: 0;
+      top: -10px;
+    }
+  }
+
+  .el-button.el-button--text.sendCode {
+    @include backgroundColor(A2);
+    @include color(A10);
+  }
+}
+
+.cell_second {
+  @include color(A8);
+}
+
+.cell_first {
+  @include color(A6);
+}
+
+.cell_assist{
+  @include color(A10);
+}
+
+
+.el-tooltip__popper {
+  max-width: 600px;
+}
+
+.d2-layout-header-aside-group
+  .d2-layout-header-aside-content
+  .d2-theme-container
+  .d2-theme-container-aside
+  .d2-layout-header-aside-menu-side {
+  bottom: 52px;
+}
+
+.el-date-editor.el-range-editor.el-input__inner {
+  border-radius: 2px;
+}

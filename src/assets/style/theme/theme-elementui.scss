@@ -1,0 +1,1088 @@
+// 按钮
+button.el-button {
+  font-weight: 400 !important;
+  &:focus {
+    // @include backgroundColor(A3);
+  }
+
+  &:hover {
+    @include backgroundColor(A3h);
+  }
+
+  &:active {
+    @include backgroundColor(A3);
+  }
+
+  &.el-button--primary {
+    @include borderColor(A3);
+    @include backgroundColor(A3);
+
+    &:hover {
+      @include backgroundColor(A3h);
+      @include borderColor(A3);
+    }
+
+    &.is-disabled {
+      @include backgroundColor(A3);
+      &:hover {
+        @include backgroundColor(A3);
+        @include borderColor(A3);
+      }
+    }
+  }
+
+  // 朴素按钮
+  &.is-plain {
+    @include color(A3);
+    @include backgroundColor(A2);
+    &:focus {
+      @include color(A3);
+      @include backgroundColor(A2);
+    }
+
+    &:hover {
+      @include color(A2);
+      @include backgroundColor(A3);
+    }
+
+    &:active {
+      @include color(A3);
+      @include backgroundColor(A2);
+    }
+
+    &.is-disabled {
+      @include backgroundColor(A2);
+      @include borderColor(A3);
+      &:hover {
+        @include backgroundColor(A2);
+        @include borderColor(A3);
+      }
+    }
+  }
+
+  // 增加辅助色
+  &.el-button--assist {
+    @include borderColor(A10);
+    @include color(A2);
+    @include backgroundColor(A10);
+
+    &:focus {
+      @include backgroundColor(A10);
+    }
+
+    &:hover {
+      @include backgroundColor(A10h);
+    }
+
+    &:active {
+      @include backgroundColor(A10);
+    }
+
+    &.is-disabled {
+      @include color(A2);
+      @include borderColor(A2);
+      @include backgroundColor(A10);
+      &:hover {
+        @include color(A2);
+        @include borderColor(A2);
+        @include backgroundColor(A10);
+        @include borderColor(A2);
+      }
+    }
+  }
+
+  // 辅助色朴素版
+  &.el-button--assist.is-plain{
+    @include borderColor(A10);
+    @include color(A10);
+    @include backgroundColor(A2);
+
+    &:focus {
+      @include color(A10);
+      @include backgroundColor(A2);
+    }
+
+    &:hover {
+      @include color(A2);
+      @include backgroundColor(A10h);
+    }
+
+    &:active {
+      @include color(A10);
+      @include backgroundColor(A2);
+    }
+
+    &.is-disabled {
+      @include color(A10);
+      @include borderColor(A10);
+      @include backgroundColor(A2);
+      &:hover {
+        @include color(A10);
+        @include borderColor(A10);
+        @include backgroundColor(A2);
+        @include borderColor(A10);
+      }
+    }
+  }
+
+  // 文字按钮
+  &.el-button--text{
+    border: 1px solid transparent !important;
+    @include color(A10);
+    background: transparent;
+
+    &:focus{
+      @include color(A10);
+      background: transparent;
+    }
+
+    &:hover, &:active {
+      @include color(A2);
+      @include backgroundColor(A10);
+    }
+
+    // 文字禁用样式
+    &.is-disabled{
+      &:focus, &:hover, &:active{
+      @include color(A10);
+      background: transparent;
+      }
+    }
+
+  }
+
+  // 文字按钮 基煜基金配色
+  &.el-button--text.is-plain{
+    border: 1px solid transparent !important;
+    @include color(A3);
+    background: transparent;
+
+    &:focus{
+      @include color(A3);
+      background: transparent;
+    }
+
+    &:hover {
+      @include color(A2);
+      @include backgroundColor(A3);
+    }
+
+    &:active {
+      @include color(A2);
+      @include backgroundColor(A3);
+    }
+  }
+
+
+
+
+
+}
+
+// 链接
+a.el-link {
+  &.el-link--assist {
+    @include color(A10);
+
+    &.is-underline:hover:after {
+      @include borderBottomColor(A10);
+    }
+  }
+}
+
+// 链接
+a.el-link {
+  &.el-link--text {
+    @include color(A6);
+    &:hover{
+      @include color(A10);
+    }
+
+    &.is-underline:hover:after {
+      display: none
+    }
+  }
+}
+
+// 单选框 使用辅色
+label.el-radio {
+  @include color(A6,1);
+  .el-radio__inner {
+    width: 16px;
+    height: 16px;
+    @include color(A8);
+    @include borderColor(A8);
+    &:hover {
+      @include borderColor(A10);
+    }
+  }
+  .el-radio__label{
+    &:hover {
+      @include color(A10);
+    }
+  }
+
+  // 选中状态
+  &.is-checked {
+    .el-radio__input.is-checked + .el-radio__label {
+      @include color(A10);
+    }
+    .el-radio__inner {
+      @include borderColor(A10);
+      @include backgroundColor(A2);
+      &::after {
+        @include backgroundColor(A10);
+        width: 7px;
+        height: 7px;
+      }
+    }
+  }
+
+  &.is-disabled .el-radio__inner {
+    @include borderColor(A16);
+    @include backgroundColor(A16);
+  }
+}
+
+// 复选框 使用辅色
+span.el-checkbox__input {
+  &.is-checked,
+  &.is-indeterminate {
+    .el-checkbox__inner {
+      @include backgroundColor(A10);
+      @include borderColor(A10);
+    }
+  }
+
+  &.is-focus .el-checkbox__inner {
+    @include borderColor(A17);
+  }
+
+  &.is-checked + .el-checkbox__label {
+    @include color(A10);
+  }
+
+  .el-checkbox__inner:hover {
+    @include borderColor(A10);
+  }
+
+  &.is-disabled.is-checked +span.el-checkbox__label{
+    @include color(A10);
+  }
+
+  // 禁用且已勾选
+  &.is-disabled.is-checked .el-checkbox__inner {
+    @include backgroundColor(A17);
+    &::after {
+      @include borderColor(A2);
+    }
+  }
+
+  // 禁用且未勾选
+  &.is-disabled .el-checkbox__inner {
+    @include backgroundColor(A16);
+    @include color(A2h);
+  }
+}
+
+// 弹窗样式
+div.el-dialog {
+  // 标题
+  div.el-dialog__header {
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 16px;
+    @include color(A10);
+    font-weight: 600;
+    box-sizing: border-box;
+    @include backgroundColor(A12);
+    @include borderColor(A13);
+    border-bottom: 1px solid;
+    .el-dialog__title {
+      @include color(A10);;
+    }
+
+    border-top-width: 3px;
+    border-top-style: solid;
+    @include borderTopColor(A10);
+  }
+  // 内容
+  .el-dialog__body {
+    padding: 32px 24px;
+    // 移除max-height限制，在dialog内部通过el-scrollbar控制
+    max-height: 100%;
+    @include backgroundColor(A2);
+
+    form {
+      padding: 20px 85px;
+      .el-form-item__label {
+        font-weight: bold;
+        padding: 0;
+      }
+    }
+    .dialogInfo-css{
+      form{
+        padding: 0;
+      }
+    }
+  }
+}
+// 修改操作员弹窗
+.edit_hander_box{
+  .el-dialog{
+    .el-dialog__body{
+      max-height: auto !important;
+      form {
+        padding: 0 20px;
+      }
+      .user-info-risk-confirm{
+        padding: 0 20px;
+      }
+      .user-info-create-user__tips{
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+// 输入框
+div.el-input {
+  .el-input__inner{
+    @include borderColor(A16);
+    @include backgroundColor(A7);
+    border-radius: 2px;
+    &:hover, &:focus{
+      @include borderColor(A10);
+    }
+  }
+
+  &::placeholder{
+    @include color(A8);
+  }
+}
+
+// 下拉框
+div.el-select {
+  @include borderColor(A16);
+
+  &:focus, &:hover, .el-input.is-focus {
+    @include borderColor(A10);
+    .el-input__inner{
+      @include borderColor(A10);
+      border-radius: 2px;
+      &:hover, &:focus{
+        @include borderColor(A10);
+      }
+    }
+  }
+  .el-tag.el-tag--info{
+    @include color(A6)
+  }
+  .el-tag__close.el-icon-close::before{
+    @include color(A2, 1);
+  }
+}
+
+// 下拉选项
+div.el-select-dropdown.el-popper {
+  box-shadow: 0 5px 12px 0px rgb(0 0 0 / 15%);
+  @include borderColor(A13);
+  .popper__arrow::after{
+    @include borderBottomColor(A13);
+  }
+}
+
+div.el-select-dropdown, div.el-select-dropdown.is-multiple {
+  @include color(A6);
+  @include backgroundColor(A2);
+  .el-select-dropdown__item{
+    font-size: 12px;
+    line-height: 32px;
+    height: 32px;
+    &:hover{
+      @include color(A10);
+      @include backgroundColor(A2h);
+    }
+
+    &.selected{
+       @include color(A10);
+    }
+
+    &.selected.hover, &.hover{
+      @include color(A10);
+      @include backgroundColor(A2h);
+    }
+    &.is-disabled, &.is-disabled:hover {
+      @include color(A17);
+      @include backgroundColor(A2);
+    }
+  }
+  .el-select-dropdown__empty{
+    @include color(A18)
+  }
+}
+
+.el-popper[x-placement^=bottom] div.popper__arrow{
+  @include borderBottomColor(A13);
+  &::after{
+    top: 0px;
+    @include borderBottomColor(A2);
+  }
+}
+
+div.el-table{
+  .el-table__header{
+    // .el-checkbox.is-checked .el-checkbox__inner {
+    //   @include borderColor(checkboxBorder,1);
+    // }
+    .el-checkbox__inner{
+      @include borderColor(A17);
+      @include backgroundColor(A2);
+      &:hover{
+        @include borderColor(A10);
+      }
+    }
+    .sort-caret.descending {
+      @include borderTopColor(A42);
+    }
+    .sort-caret.ascending{
+      @include borderBottomColor(A42);
+    }
+
+    .descending .sort-caret.descending {
+      @include borderTopColor(A3);
+    }
+    .ascending .sort-caret.ascending {
+      @include borderBottomColor(A3);
+    }
+    .el-checkbox__input.is-checked .el-checkbox__inner{
+      @include backgroundColor(A10);
+      @include borderColor(checkboxBorder);
+    }
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+      @include backgroundColor(A10);
+      @include borderColor(checkboxBorder);
+    }
+  }
+  .el-table__empty-text{
+    @include color(A6)
+  }
+
+  // 操作文字按钮
+  button.el-button {
+    &.el-button--assist.is-plain {
+      background: transparent;
+
+      &:focus {
+        background: transparent;
+      }
+
+      &:hover {
+        @include color(A2);
+        @include backgroundColor(A10h);
+      }
+
+      &:active {
+        background: transparent;
+      }
+    }
+  }
+
+
+  // 表头
+  th.is-leaf{
+    @include backgroundColor(A14);
+    @include color(A15);
+    border-left: 1px solid transparent;
+    @include borderLeftColor(A2);
+    // 两行表头换行
+    div.cell{
+      white-space: pre-line;
+    }
+    &:first-child{
+      @include borderLeftColor(A14);
+    }
+    &:last-child {
+      // @include borderLeftColor(A14);
+    }
+    &.el-table__expand-column{
+      @include borderLeftColor(A14);
+    }
+  }
+  th.gutter,.el-table__fixed-right-patch{
+    @include backgroundColor(A14);
+    border-bottom: 1px solid transparent;
+    @include borderColor(A14);
+  }
+  // 表格
+  tr.el-table__row{
+    &:hover>td{
+      @include backgroundColor(A2h);
+    }
+
+    // 斑马纹
+    &.el-table__row--striped{
+      >td{
+        @include backgroundColor(A11);
+      }
+      &:hover>td{
+        @include backgroundColor(A2h);
+      }
+    }
+
+    .cell_weak{
+      @include color(A8);
+    }
+
+    &.hover-row{
+      td{
+        @include backgroundColor(A2h);
+      }
+    }
+  }
+
+  // 表格内边框线隐藏
+  &.el-table--border td{
+    border-color: transparent;
+  }
+  // 表格
+  &.el-table--border {
+    border: none;
+  }
+
+  &.el-table--border::after, &.el-table--group::after{
+    border: none;
+    display: none;
+  }
+
+}
+
+
+// 基金列表表格 设置左右间距
+.list-table-box{
+  padding: 0 16px;
+}
+// 表头
+div.el-table th .cell{
+  // 允许表头文字被选中
+  user-select: text;
+}
+
+// 内嵌表格
+div.el-table.innerTable{
+  // 表头
+  th.is-leaf{
+    @include backgroundColor(A14O1);
+    @include color(A6);
+  }
+
+   // 表格
+   tr.el-table__row{
+    &:hover, &:hover>td{
+      @include backgroundColor(A2h);
+    }
+
+    // 斑马纹
+    &.el-table__row--striped{
+      &:hover, &:hover>td{
+        @include backgroundColor(A2h);
+      }
+    }
+
+
+    &.hover-row{
+      td{
+        @include backgroundColor(A2h);
+      }
+    }
+  }
+}
+
+
+// 分页器
+div.el-pagination {
+  @include backgroundColor(A2);
+  .el-pagination__total, .el-pagination__sizes, .el-pagination__jump {
+    @include color(A8);
+  }
+
+  .el-pager li {
+    @include color(A8);
+    @include borderColor(A3);
+
+    &:hover {
+      @include color(A10);
+    }
+    &.active {
+      @include color(A2);
+      @include backgroundColor(A10);
+    }
+  }
+}
+// loading
+div.el-loading-mask {
+  @include backgroundColor(A2O1);
+  .el-loading-spinner {
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    background-repeat: no-repeat;
+    background-position:center;
+    @include backgroundColor(A10O2);
+    border-radius: 10px;
+    background-image: url('~@/../public/image/loading/loading.svg');
+    &::before {
+      background-image: url('~@/../public/image/loading/loading-txt.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      width: 100px;
+      height: 24px;
+      content: '';
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      line-height: 20px;
+      font-size: 12px;
+      text-align: center;
+    }
+    svg {
+      display: none;
+    }
+  }
+}
+
+// 日期样式
+
+div.el-date-editor{
+  .el-range-input{
+    @include color(A6);
+    @include borderColor(A16);
+    @include backgroundColor(A7);
+    &:hover, &:focus{
+      @include borderColor(A10);
+    }
+  }
+  &::placeholder{
+    @include color(A6);
+  }
+}
+div.el-date-editor.el-input__inner{
+  @include borderColor(A16);
+  @include backgroundColor(A7);
+  &:hover, &:focus{
+    @include borderColor(A10);
+  }
+}
+div.el-range-editor .el-range-input{
+  line-height: 24px !important;
+}
+div.el-range-editor.is-active, div.el-range-editor.is-active:hover{
+  @include borderColor(A10);
+}
+div.el-picker-panel{
+  .el-date-range-picker__header div{
+    font-size: 14px
+  }
+  .el-date-table td.today div>span{
+    // @include color(A10);
+    color: #fff;
+    @include backgroundColor(A10O1);
+  }
+
+  table.el-date-table td.available:hover{
+    @include color(A10);
+  }
+
+  .el-date-table td.available:hover span{
+    border: 1px solid #A08D79;
+  }
+
+  table.el-date-table tr td.in-range div,
+  table.el-date-table tr td.in-range div:hover{
+    @include backgroundColor(A10O1);
+  }
+
+
+  table.el-date-table td.start-date span,
+  table.el-date-table td.end-date span {
+    @include backgroundColor(A10);
+  }
+
+  table.el-date-table td.disabled div{
+    @include backgroundColor(A13);
+  }
+
+  .el-date-range-picker__content.is-left{
+    @include borderColor(A13);
+  }
+  .el-picker-panel__body-wrapper{
+    .el-picker-panel__sidebar{
+      @include borderColor(A13);
+    }
+    .el-picker-panel__shortcut{
+      &:hover, &:focus{
+        @include color(A10);
+      }
+    }
+  }
+}
+
+
+.red{
+  @include color(A20, 1)
+}
+
+
+.green{
+  @include color(A19, 1)
+}
+
+// 滚动条样式优化
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/*滚动条的轨道*/
+ ::-webkit-scrollbar-track {
+   @include backgroundColor(A2);
+}
+
+/*滚动条里面的小方块，能向上向下移动*/
+::-webkit-scrollbar-thumb {
+  @include backgroundColor(A17);
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  border-radius: 5px;
+  border: none;
+}
+::-webkit-scrollbar-thumb:hover {
+  @include backgroundColor(A17);
+}
+::-webkit-scrollbar-thumb:active {
+  @include backgroundColor(A21);
+}
+/*边角，即两个滚动条的交汇处*/
+::-webkit-scrollbar-corner {
+  @include backgroundColor(A2);
+}
+.el-table ::-webkit-scrollbar-thumb {
+  @include backgroundColor(A17);
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+.el-table:hover ::-webkit-scrollbar-thumb {
+  @include backgroundColor(A17);
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+// el-select添加 tag-ellipsis class 将多选的tag进行省略号溢出处理
+.el-select.tag-ellipsis {
+  .el-select__tags {
+    // 解决多个tag卡片溢出隐藏问题
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    .el-tag {
+      display: inline-block;
+      .el-tag--info .el-tag__close{
+        &::before{
+          content: '';
+        }
+      }
+      .el-select__tags-text {
+        display: inline-block;
+        max-width: 82px;  // 最多显示前五个16px中文字符 5*16=80
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include color(A6, 1);
+      }
+    }
+
+  }
+}
+
+
+.el-tooltip.el-icon-warning, .el-tooltip.iconfont-wenhao-fill, .el-tooltip.tooltips-icon{
+  cursor: pointer;
+  @include color(A17);
+  &:hover{
+    @include color(A4)
+  }
+}
+.el-message {
+  top: 20px !important;
+}
+.el-message:not(:last-child) {
+  visibility: hidden;
+}
+div.el-tabs__nav-wrap::after {
+  @include backgroundColor(A1)
+}
+.el-message.el-message--success{
+  // @include backgroundColor(A10);
+  // border-color: #ead4d6;
+  // .el-message--success {
+  //   background-color: #f4eaeb;
+  //   border-color: #ead4d6;
+  // }
+}
+
+element.style {
+  top: 20px;
+  z-index: 2002;
+}
+// 一期弹窗样式
+.edit-dialog-box{
+  .edit-main-box{
+    .edit-role-subcontainer-box-left{
+      @include backgroundColor(A11);
+      margin-right: 8px;
+      padding: 16px 0 0 16px !important;
+
+      .user-info-batch-edit-role__tree {
+         @include backgroundColor(A11);
+         padding-right: 16px !important;
+      }
+    }
+    .ubtitlte--text{
+      @include color(A6, 1);
+    }
+    .edit-role-subcontainer-box-right{
+      @include backgroundColor(A11);
+      padding: 16px 0 0  16px !important;
+    }
+    .edit-role-subcontainer-box {
+      height: 300px;
+      .el-tree-node__content{
+        &:hover {
+          background-color: transparent !important;
+          @include color(A10, 1);
+        }
+      }
+      .custom-tree-node.ellipsis {
+        &:hover {
+          @include color(A10, 1);
+        }
+      }
+    }
+        // 单选框 使用辅色
+    label.el-radio {
+      @include color(A6,1);
+      .el-radio__inner {
+        @include color(A8);
+        @include borderColor(A8);
+        &:hover {
+          @include borderColor(A10);
+        }
+      }
+      .el-radio__label{
+        &:hover {
+          @include color(A10);
+        }
+      }
+
+      // 选中状态
+      &.is-checked {
+        .el-radio__input.is-checked + .el-radio__label {
+          @include color(A10);
+        }
+        .el-radio__inner {
+          @include borderColor(A10);
+          @include backgroundColor(A2);
+          &::after {
+            @include backgroundColor(A10);
+            width: 7px;
+            height: 7px;
+          }
+        }
+      }
+
+      &.is-disabled .el-radio__inner:hover {
+        border: none;
+      }
+    }
+    .checkbox-group-box{
+      .el-checkbox {
+        display: block;
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+        @include color(A6);
+        .el-checkbox__label {
+          overflow: hidden;
+          text-overflow: ellipsis; //超出部分以省略号显示
+          white-space: nowrap;
+          width: 180px;
+        }
+        &:hover {
+          .el-checkbox__label {
+            @include color(A10);
+          }
+        }
+      }
+    }
+
+  }
+  // 授权分类
+  .type-css{
+    @include backgroundColor(A11, 1);
+    .el-checkbox {
+      @include color(A6);
+      &:hover {
+        .el-checkbox__label {
+          @include color(A10);
+        }
+      }
+    }
+  }
+  // 在线开户
+  .protype-css{
+    ul li{
+      @include  backgroundColor(A11);
+      border: 2px solid;
+      @include borderColor(A2h);
+      @include color(A4);
+      &:hover{
+        @include borderColor(A10);
+        @include color(A10);
+      }
+    }
+  }
+    // 复选框 使用辅色
+  span.el-checkbox__input {
+    &.is-checked,
+    &.is-indeterminate {
+      .el-checkbox__inner {
+        @include backgroundColor(A10);
+        @include borderColor(A10);
+      }
+    }
+
+    &.is-focus .el-checkbox__inner {
+      @include borderColor(A17);
+    }
+
+    &.is-checked + .el-checkbox__label {
+      @include color(A10);
+    }
+
+    .el-checkbox__inner:hover {
+      @include borderColor(A10);
+    }
+
+    &.is-disabled.is-checked +span.el-checkbox__label{
+      @include color(A10);
+    }
+
+    // 禁用且已勾选
+    &.is-disabled.is-checked .el-checkbox__inner {
+      @include backgroundColor(A17);
+      &::after {
+        @include borderColor(A2);
+      }
+    }
+
+    // 禁用且未勾选
+    &.is-disabled .el-checkbox__inner {
+      @include backgroundColor(A2h);
+      @include color(A2h);
+    }
+  }
+}
+
+.confirmButtonTextClass{
+  .el-message-box__btns{
+    button.el-button{
+      &:nth-child(1) {
+        margin: 0 16px;
+        &:hover{
+          @include color(A7, 1);
+          @include backgroundColor(A3);
+          @include borderColor(A3);
+        }
+      }
+    }
+  }
+  &.confirmButtonTextWarning{
+   .el-message-box__container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    .el-message-box__status{
+      position: static;
+      top: 50%; 
+      transform: translateY(0);
+    }
+    .el-message-box__message{
+      padding-left: 16px !important;
+    }
+   } 
+  }
+}
+.alertConfirmButtonClass{
+  .el-message-box__btns{
+    button.el-button.el-button--small{
+      padding: 8px 15px !important;
+    }
+  }
+}
+// 基煜账户名称样式
+.publick.fofundName{
+  text-align: left !important;
+  width: 100%;
+  box-sizing: border-box;
+  div{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+}
+.publick.fofundName.fofundNameNoTh{
+  width: 100%;
+}
+
+.points-event-none{
+  pointer-events: none;
+}
+
+
+li.el-cascader-node:not(.is-disabled):focus, li.el-cascader-node:not(.is-disabled):hover{
+  @include color(A10);
+  @include backgroundColor(A2h);
+}
+
+.el-image-viewer__btn.el-image-viewer__close{
+  @include color(A2);
+}
+
+.theme-client .plTableBox .el-table tr{
+  background: #38383B;
+}
+.plTableBox .el-table{
+  background: inherit !important;
+  color: inherit !important;
+}
+
+@media screen and ( max-width: 1599px )  {
+  .my-assets-table{
+    .plTableBox .el-table__fixed {
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.3) !important;
+    }
+    .plTableBox .el-table__fixed-right {
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.3) !important;
+    }
+  }
+}
+// 
