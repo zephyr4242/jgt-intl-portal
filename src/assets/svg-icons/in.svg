@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>入</title>
+    <defs>
+        <linearGradient x1="86.0819005%" y1="84.4960412%" x2="21.7002952%" y2="16.1169813%" id="linearGradient-1">
+            <stop stop-color="#A08D79" offset="0%"></stop>
+            <stop stop-color="#D8C3AD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="入" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M100,0 C155.23,0 200,44.77 200,100 C200,155.23 155.23,200 100,200 C44.77,200 0,155.23 0,100 C0,44.77 44.77,0 100,0 Z M84.16,41.36 L73.72,48.08 C81.16,53.36 87.52,60.8 92.92,70.52 C85,100.76 68.56,123.92 43.72,140.24 L51.4,151.04 C75.4,135.44 91.36,113.36 99.52,84.92 L99.88,86 C112.72,118.16 128.44,139.88 147.04,150.92 L154.84,140.96 C136.84,129.44 122.2,109.76 110.8,81.92 C102.88,61.88 94,48.32 84.16,41.36 L84.16,41.36 Z" id="形状"></path>
+        </g>
+    </g>
+</svg>

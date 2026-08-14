@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 9</title>
+    <defs>
+        <linearGradient x1="97.1740994%" y1="114.255143%" x2="20.724456%" y2="9.99315242%" id="linearGradient-1">
+            <stop stop-color="#EEEEEE" offset="0%"></stop>
+            <stop stop-color="#D4B883" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的账户/电子合同" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-9">
+            <rect id="矩形备份-2" fill="url(#linearGradient-1)" x="0" y="0" width="14" height="14" rx="7"></rect>
+            <text id="入" font-family="PingFangSC-Regular, PingFang SC" font-size="10" font-weight="normal" fill="#2C2C2E">
+                <tspan x="2" y="11">入</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

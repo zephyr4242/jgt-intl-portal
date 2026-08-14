@@ -1,0 +1,68 @@
+.thousands{
+    @include color(A10);
+    margin-right: 16px;
+    font-size: 14px;
+    line-height: 31px;
+}
+// 状态默认样式
+.statusDefaulttyle{
+    @include color(A6);
+    display: flex;
+    justify-content: center;
+}
+// 失败样式
+.loseClass{
+    @include color(A18)
+}
+// 失败提示
+.iconName{
+    width: 14px;
+    height: 14px;
+    font-size: 14px !important;
+    display: inline-block;
+    @include color(A17);
+    vertical-align: middle;
+    cursor: pointer;
+}
+.iconName_eclinet{
+    line-height: 16px;
+}
+// 多行展示默认样式
+.multiLineBox{
+    width: 100%;
+    .multiLineSpan1{
+        @include color(A10);
+        line-height: 16px;
+        padding-bottom: 1px;
+        &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    .multiLineSpan2{
+        @include color(A8);
+        cursor: default;
+    }
+    // 注册机构
+    .registrationAgency{
+        @include color(A6);
+        cursor: default !important;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+// productInfo-css
+.table-multi-line-font-color-first{
+    @include color(A10);
+}
+.table-multi-line-font-color-second{
+    @include color(A8);
+}
+.icon-color{
+    @include color(A16);
+}
+.icon-margin-left-5{
+    margin-left: 5px;
+}

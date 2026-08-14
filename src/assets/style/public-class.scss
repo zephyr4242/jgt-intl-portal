@@ -1,0 +1,182 @@
+@import 'public';
+
+// css初始化
+@import '~@/assets/style/reset.css';
+// 补丁 base
+@import '~@/assets/style/fixed/base.scss';
+// 补丁 进度条
+@import '~@/assets/style/fixed/n-progress.scss';
+// 动画
+@import '~@/assets/style/animate/vue-transition.scss';
+// 补丁 element
+.theme-web, .theme-client {
+  @import '~@/assets/style/fixed/element.scss';
+}
+// 上面的写法会导致颜色不生效，所以在下面再引用一次
+@import '~@/assets/style/fixed/element.scss';
+// iconfont
+@import '~@/assets/style/iconfont/iconfont.css';
+// 字体引入
+@import '~@/assets/style/fontnum.scss';
+// 多账户一期通用样式（不应该在此，找机会移除）
+@import '~@/assets/style/fixed/fap-element.scss';
+
+// 在这里写公用的class
+// 注意 这个文件里只写class
+// mixin等内容请在 public.scss 里书写
+[class*=iconfont-] {
+  font-family: "jgt-iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 文字相关
+.#{$prefix}-text-center {
+  text-align: center;
+}
+.#{$prefix}-text-right {
+  text-align: right;
+}
+.#{$prefix}-text-left {
+  text-align: left;
+}
+.#{$prefix}-fs-12 {
+  font-size: 12px;
+}
+.#{$prefix}-fs-14 {
+  font-size: 14px;
+}
+
+.#{$prefix}-fw-bold {
+  font-weight: 700;
+}
+
+// 行高相关
+.#{$prefix}-lh-20 {
+  line-height: 20px;
+}
+
+// 浮动相关
+.#{$prefix}-fl {
+  float: left;
+}
+.#{$prefix}-fr {
+  float: right;
+}
+
+// 显示相关
+.#{$prefix}-show {
+  display: block !important;
+}
+.#{$prefix}-hide {
+  display: none !important;
+}
+.#{$prefix}-visibility {
+  visibility: hidden;
+}
+
+// 边距相关
+$sizes: (0, 4, 5, 8, 10, 12, 15, 16, 20, 24, 25, 30, 32, 35, 40, 100);
+
+@for $index from 1 through length($sizes) {
+  .#{$prefix}-m-#{nth($sizes, $index)} { margin: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-mt-#{nth($sizes, $index)} { margin-top: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-mr-#{nth($sizes, $index)} { margin-right: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-mb-#{nth($sizes, $index)} { margin-bottom: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-ml-#{nth($sizes, $index)} { margin-left: #{nth($sizes, $index)}px !important; }
+
+  .#{$prefix}-p-#{nth($sizes, $index)} { padding: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pt-#{nth($sizes, $index)} { padding-top: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pr-#{nth($sizes, $index)} { padding-right: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pb-#{nth($sizes, $index)} { padding-bottom: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pl-#{nth($sizes, $index)} { padding-left: #{nth($sizes, $index)}px !important; }
+}
+
+
+// 宽度相关
+$widths: (600, 1200);
+
+@for $index from 1 to length($widths) {
+  .#{$prefix}-width-#{nth($widths, $index)} { width: #{nth($widths, $index)}px !important; }
+}
+
+.#{$prefix}-cursor-p {
+  cursor: pointer;
+}
+
+// 通用按钮间距
+.el-row.#{$prefix}-button-margin {
+  margin-top: 32px;
+  .el-button + .el-button{
+    margin-left: 32px;
+  }
+}
+
+// 文字溢出省略
+.#{$prefix}-ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+// 清除浮动
+.#{$prefix}-clearfix {
+  @extend %clearfix;
+}
+
+.#{$prefix}-vm {
+  vertical-align: middle;
+}
+.#{$prefix}-vt {
+  vertical-align: top;
+}
+.#{$prefix}-vb {
+  vertical-align: bottom;
+}
+.#{$prefix}-tc {
+  text-align: center;
+}
+.#{$prefix}-tl {
+  text-align: left;
+}
+.#{$prefix}-tr {
+  text-align: right;
+}
+
+.hoverUnderlineTxt:hover {
+  text-decoration: underline;
+}
+
+// 数字字体
+.font-family-num{
+  font-family: figure;
+}
+
+
+.preview-link{
+  @include color(A10);
+  cursor: pointer;
+  &:hover{
+   text-decoration: underline;
+  }
+}
+
+.#{$prefix}-drag {
+  -webkit-app-region: drag;
+}
+
+.postInvestmentAuthorization{
+  &.el-message-box{
+    width: 600px !important;
+    .title-box{
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .tipsTxt-box-jijintouhou {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+  }
+}

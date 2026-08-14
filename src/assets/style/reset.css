@@ -1,0 +1,21 @@
+p {
+  margin: 0;
+}
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+textarea{
+  font-family: none;
+}
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+/* 去掉搜狗浏览器密码软盘 */
+input::-webkit-input-safebox-button {
+  display: none;
+}

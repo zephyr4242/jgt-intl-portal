@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="201px" height="200px" viewBox="0 0 201 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>出</title>
+    <defs>
+        <linearGradient x1="86.0819005%" y1="84.4960412%" x2="21.7002952%" y2="16.1169813%" id="linearGradient-1">
+            <stop stop-color="#A08D79" offset="0%"></stop>
+            <stop stop-color="#D8C3AD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="出" transform="translate(0.370000, 0.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M100,0 C155.23,0 200,44.77 200,100 C200,155.23 155.23,200 100,200 C44.77,200 0,155.23 0,100 C0,44.77 44.77,0 100,0 Z M106.48,41.36 L93.53,41.36 L93.53,81.92 L69.64,81.92 L69.64,50.36 L57.04,50.36 L57.04,93.92 L93.53,93.92 L93.53,134.24 L63.64,134.24 L63.64,102.92 L51.04,102.92 L51.04,151.64 L63.64,151.64 L63.64,146.36 L136.36,146.36 L136.36,151.64 L148.96,151.64 L148.96,102.92 L136.36,102.92 L136.36,134.24 L106.48,134.24 L106.48,93.92 L142.96,93.92 L142.96,50.36 L130.36,50.36 L130.36,81.92 L106.48,81.92 L106.48,41.36 L106.48,41.36 Z" id="形状"></path>
+        </g>
+    </g>
+</svg>

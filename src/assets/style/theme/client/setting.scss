@@ -1,0 +1,69 @@
+// 主题名称
+$theme-name: 'client';
+
+$A1: #2C2C2E;
+$main: #D4B883;
+$main-hover: #DECEA8;
+$text: #FFFFFF;
+$empty: #000000;
+
+// 主题背景颜色
+$theme-bg-color: #38383B;
+// 主题背景图片遮罩
+$theme-bg-mask: rgba($empty, .3);
+
+// container组件
+$theme-container-background-color: rgba($theme-bg-color, .9);
+$theme-container-header-footer-background-color: $A1;
+$theme-container-border-inner: 1px solid $A1;
+$theme-container-border-outer: 1px solid $A1;
+
+$theme-multiple-page-control-color: #c0c0c0;
+$theme-multiple-page-control-color-active: $text;
+$theme-multiple-page-control-nav-prev-color: $text;
+$theme-multiple-page-control-nav-next-color: $text;
+$theme-multiple-page-control-border-color: $A1;
+$theme-multiple-page-control-border-color-active: $A1;
+$theme-multiple-page-control-background-color: $theme-bg-color;
+$theme-multiple-page-control-background-color-active: #2C2C2E;
+
+// 顶栏和侧边栏中展开的菜单 hover 状态下
+$theme-menu-item-color-hover:  $empty;
+$theme-menu-item-background-color-hover: $main;
+
+
+$theme-header-background-color: $A1;
+
+// 顶栏上的文字颜色
+$theme-header-item-color: $main;
+$theme-header-item-background-color: $theme-bg-color;
+// 顶栏上的项目在 hover 时
+$theme-header-item-color-hover: $main;
+$theme-header-item-background-color-hover: rgba($A1, .2);
+// 顶栏上的项目在 focus 时
+$theme-header-item-color-focus: $text;
+$theme-header-item-background-color-focus: rgba($A1, .2);
+// 顶栏上的项目在 active 时
+$theme-header-item-color-active: $text;
+$theme-header-item-background-color-active: rgba($A1, .3);
+
+// 侧边栏上的文字颜色
+$theme-aside-item-color: $text;
+$theme-aside-item-background-color: transparent;
+// 侧边栏上的项目在 hover 时
+$theme-aside-item-color-hover: $main;
+$theme-aside-item-background-color-hover: #313134;
+// 侧边栏上的项目在 focus 时
+$theme-aside-item-color-focus: $empty;
+$theme-aside-item-background-color-focus:  $main;
+// 侧边栏上的项目在 active 时
+$theme-aside-item-color-active: $empty;
+$theme-aside-item-background-color-active: $main;
+
+// 侧边栏菜单为空的时候显示的元素
+$theme-aside-menu-empty-icon-color: $text;
+$theme-aside-menu-empty-text-color: $text;
+$theme-aside-menu-empty-background-color: rgba($text, .2);
+$theme-aside-menu-empty-icon-color-hover: $text;
+$theme-aside-menu-empty-text-color-hover: $text;
+$theme-aside-menu-empty-background-color-hover: rgba($text, .3);

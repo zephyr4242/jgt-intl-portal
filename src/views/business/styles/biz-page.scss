@@ -1,0 +1,159 @@
+/* 国际业务页只复用原 account-portal 的紧凑业务排版与主题变量。 */
+.biz-page {
+  padding: 0 0 16px;
+  min-height: calc(100vh - 200px);
+  background: transparent;
+  font-size: 12px;
+}
+
+.biz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+}
+
+.biz-header__title,
+.biz-title {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: inherit;
+  line-height: 30px;
+}
+
+.biz-header__description,
+.biz-sub {
+  margin: 0;
+  padding: 8px 16px;
+  border-bottom: 1px solid;
+  @include borderColor(A13);
+  font-size: 12px;
+  @include color(A21);
+  line-height: 20px;
+  background: transparent;
+}
+
+.biz-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.biz-stat {
+  background: transparent;
+  @include borderColor(A13);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.biz-stat__lbl {
+  font-size: 12px;
+  @include color(A21);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.biz-stat__val {
+  font-size: 24px;
+  font-weight: 500;
+  color: inherit;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+
+  &.is-danger { @include color(A20); }
+  &.is-ok { @include color(A19); }
+}
+
+.biz-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.biz-card__hd {
+  min-height: 32px;
+  box-sizing: border-box;
+  padding: 7px 16px;
+  @include backgroundColor(A14);
+  font-weight: 600;
+  font-size: 13px;
+  @include color(A6);
+  line-height: 18px;
+}
+
+.biz-card__bd {
+  padding: 0;
+}
+
+.biz-empty {
+  text-align: center;
+  padding: 56px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  opacity: .64;
+}
+
+.biz-empty__ico {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.biz-tip {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 14px 16px 0;
+  padding: 9px 12px;
+  @include backgroundColor(A10O1);
+  border: 0;
+  border-left: 3px solid;
+  @include borderColor(A10);
+  color: inherit;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.tag-pending {
+  @include backgroundColor(A23O1);
+  @include color(A23);
+}
+
+.tag-ok {
+  @include backgroundColor(A10O1);
+  @include color(A19);
+}
+
+.tag-info {
+  @include backgroundColor(A14O1);
+  @include color(A15);
+}
+
+.mono {
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .biz-stats {
+    grid-template-columns: 1fr;
+  }
+}

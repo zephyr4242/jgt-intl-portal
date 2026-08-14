@@ -1,0 +1,26 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Vue 2.6.11, Vue Router 3, Vuex 3, ElementUI 2.15.6, Axios 0.21.1, JSEncrypt（RSA）, dayjs, lodash, Sass；可选 Electron 19
+  Package manager: npm
+  Build tool: Vue CLI 4 / Webpack 4；开发端口 8088
+  Architecture: SPA（hash 路由）；国际门户由 account-portal 裁剪；对接 bus-jgt-intl
+  Conventions:
+    - 正式 API 仅写 src/api/intl/；禁止恢复 api/bussiness；legacy stub 仅编译用
+    - 请求封装 @/plugin/axios，Header 字段名 token（cookie/localStorage jgt-token）
+    - 强制三语：zh-Hans / zh-Hant / en（src/locales）
+    - 密码规则：util.ispasswordFormatRight（8–16、无空格、四类至少两类）；RSA：util.getRsaCode
+  Domain: 基煜国际 Web 门户（登录/注册、工作台、产品货架、交易等演示业务）
+  Key patterns: 当前登录仍走 demo-auth（localStorage）；本变更为替换为真实 /bus/jgt/intl/auth/*
+  Commands: npm run serve / npm run build / npm run lint
+  See openspec/project.md for full project documentation
+
+rules:
+  proposal:
+    - 必须说明涉及的页面（elogin/eregister）、API（src/api/intl）、axios/cookie/i18n
+    - 必须说明是否保留 VUE_APP_DEMO_AUTH 开关
+    - 必须说明与后端契约：RSA 密文、authCode、authCodeToken、needAuthCode、冻结码
+  tasks:
+    - API 封装与页面改造分任务
+    - 验证码 UI / token 过期登出 / 代理路径分任务
+    - 三语文案独立任务

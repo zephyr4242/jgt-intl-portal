@@ -1,0 +1,13 @@
+export const CERT_ENUM = [{ value: '0', label: '身份证' },
+  { value: '1', label: '中国护照' },
+  { value: '2', label: '军官证' },
+  { value: '3', label: '士兵证' },
+  { value: '4', label: '港澳居民来往内地通行证' },
+  { value: '5', label: '户口本' },
+  { value: '6', label: '外国护照' },
+  { value: '7', label: '其它' },
+  { value: '8', label: '文职证' },
+  { value: '9', label: '警官证' },
+  { value: 'A', label: '台胞证' },
+  { value: 'B', label: '外国人永久居留身份证' },
+  { value: 'C', label: '港澳台居民居住证' }]

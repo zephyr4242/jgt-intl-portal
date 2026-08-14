@@ -1,0 +1,18 @@
+// element-ui组件换肤
+
+// element-iocns
+@font-face {
+    font-family: element-icons;
+    src: url(fonts/element-icons.woff) format("woff"), url(fonts/element-icons.ttf) format("truetype");
+    font-weight: 400;
+    font-display: "auto";
+    font-style: normal; 
+}
+
+// 主题名字
+.theme-web{
+    @import './web';
+}
+.theme-client{
+    @import './client';
+}

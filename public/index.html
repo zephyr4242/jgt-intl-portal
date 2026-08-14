@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link rel="icon" href="<%= BASE_URL %>icon.ico">
+
+    <title><%= VUE_APP_TITLE %></title>
+    <style>
+      html, body, #app { height: 100%; margin: 0px; padding: 0px; width: 100%; }
+      .d2-home { background-color: #303133; height: 100%; display: flex; flex-direction: column; }
+      .d2-home__main { user-select: none; width: 100%; flex-grow: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+      .d2-home__loading { height: 32px; width: 32px; margin-bottom: 20px; }
+    </style>
+
+  </head>
+  <body id="jybody">
+    <noscript>
+      <strong>
+        Enable JavaScript for browsers and continue.
+      </strong>
+    </noscript>
+    <div id="app">
+      <div class="d2-home">
+        <div class="d2-home__main el-loading-mask" id="d2-home__loading">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
+              <path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/>
+              <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
+                <animateTransform attributeName="transform" type="rotate" from="0 16 16" to="360 16 16" dur="0.8s" repeatCount="indefinite" />
+              </path>
+            </svg>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if(window.top && window.top.CONFIG){
+        // 客户端
+        let CONFIG = JSON.parse(JSON.stringify(window.top.CONFIG))
+        CONFIG.VUE_APP_API = "http://root/vue_axios"
+        window.CONFIG = CONFIG
+      }else{
+        var isElectron = navigator.userAgent.toLowerCase().indexOf('electron/') > -1;
+        // web
+        document.write('<scri'+'pt src="<%= BASE_URL %>config.js?'+ (+new Date()) +'" type="text/javascript" charset="utf-8"></s'+'cript>'); // electron 本地模式也需要获取web的config
+        if (isElectron){
+          document.write('<scri'+'pt src="./pdfjs-2.16.105-legacy-dist/build/pdf.js" type="text/javascript" charset="utf-8"></s'+'cript>');
+        } else {
+          // document.write('<scri'+'pt src="./pdfjs-2.0.943-dist/build/pdf.js" type="text/javascript" charset="utf-8"></s'+'cript>');
+        }
+      }
+    </script>
+
+    <script>
+      if (location.href.indexOf('http://sp') > -1 && window.CONFIG) {
+        let originPath = window.location.origin
+        window.CONFIG.VUE_APP_LINK_PATH = originPath
+        window.CONFIG.VUE_APP_ACCOUNT_PATH = originPath + '/account/nav'
+
+        let version = location.href.split('.')[0].replace('http://', '')
+        localStorage.setItem('jgt-feign-version', version)
+        // 后续改为https再进行优化
+        const isDev = location.href.indexOf('dev') > 0
+        window.CONFIG.JGT_ADVISER = isDev ? 'http://'+version+'.ia.dev.jiyujgt.com/#/index?token=' : 'http://'+version+'.ia.test.jiyujgt.com/#/index?token='
+        window.CONFIG.VUE_APP_MANAGE_PATH = isDev ? 'http://'+version+'.ir.dev.jiyujgt.com' : 'http://'+version+'.ir.test.jiyujgt.com'
+      } else if(location.origin.includes('test') || location.origin.includes('dev') || location.origin.includes('localhost')){
+        // 保留 jgt-feign-version
+      } else {
+        localStorage.removeItem('jgt-feign-version')
+      }
+    </script>
+
+
+  </body>
+
+</html>

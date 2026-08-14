@@ -1,0 +1,78 @@
+@import '~@/assets/style/unit/color.scss';
+@import '~@/assets/style/unit/themecolor.scss';
+
+// 工具类名统一前缀
+$prefix: jgt;
+
+// 禁止用户选中 鼠标变为手形
+%unable-select {
+  user-select: none;
+  cursor: pointer;
+}
+
+// 填满父元素
+// 组要父元素 position: relative | absolute;
+%full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// flex 垂直水平居中
+%flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+%flex-center-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 清除浮动 */
+%clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// 滚动条样式优化
+%scrollbar-custom {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  /*滚动条的轨道*/
+  ::-webkit-scrollbar-track {
+    @include backgroundColor(A2);
+  }
+  /*滚动条里面的小方块，能向上向下移动*/
+  ::-webkit-scrollbar-thumb {
+    @include backgroundColor(A17);
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @include backgroundColor(A17);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    @include backgroundColor(A21);
+  }
+  /*边角，即两个滚动条的交汇处*/
+  ::-webkit-scrollbar-corner {
+    @include backgroundColor(A2);
+  }
+}

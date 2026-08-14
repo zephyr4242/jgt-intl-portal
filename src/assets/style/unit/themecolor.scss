@@ -1,0 +1,341 @@
+// 文档 https://n6ikj6ymiv.feishu.cn/docs/doccnR1QZW8jDay7h2ArBGN8VRd
+/* 定义数组 */
+$color: (
+    web: (
+        A1: #F0F0F0,
+        A2: #FFFFFF,
+        A2O1: rgba(255, 255, 255, .9),
+        A2h: #EBE8E2,
+        A3: #952A32,
+        A3h: #711514,
+        A4: #38383B,
+        A5: #EBE8E2,
+        A6: #38383B,
+        A6O1: rgba(56, 56, 59, .95),
+        A7: #FFFFFF,
+        A8: #838383,
+        A9O1: rgba(0, 0, 0, .6),
+        A9O2: rgba(0, 0, 0, .9),
+        A10: #A08D79,
+        A10O1: rgba(160, 141, 121, .25),
+        A10O2: rgba(160, 141, 121, .6),
+        A10h: #7F674D,
+        A11: #F9F9F9,
+        A12: #EBE8E2,
+        A13: #F0F0F0,
+        A14: #A08D79,
+        A14O1: rgba(160, 141, 121, .6),
+        A15: #FFFFFF,
+        A15O1: rgba(255, 255, 255, .6),
+        A16: #C0C0C0,
+        A17: #C0C0C0,
+        A18: #DC4E37,
+        A18O1: rgba(220, 78, 55, .25),
+        A19: #397B41,
+        A20: #B62F2C,
+        A21: #838383,
+        A22: #F7EECA,
+        A23: #FB9B1E,
+        A23O1: rgba(251, 155, 30, .25),
+        A24: linear-gradient(to bottom right, #E5D6C3 0%, #A08D79 100%),
+        A25: #7D6B58,
+        A26: #A08D79,
+        A27: #BCAFA1,
+        A28: #D8D1C9,
+        A29: #896805,
+        // A30-A39是图表颜色，css里面不会用到
+        A30: #A08D79,
+        A31: #EDAF6D,
+        A32: #61564A,
+        A33: #BA9B7C,
+        A34: #F6DEB0,
+        A35: #867867,
+        A36: #D1A576,
+        A37: #3A3116,
+        A38: #CBAF7A,
+        A39: #D3C8BA,
+        A40: #FFFFFF,
+        A41: #FFFFFF,
+        A42:#FFFFFF,
+        // ----------
+
+        // 最小宽度
+        mainMinWidth: 1048px,
+        // 添加padding
+        mainPadding: 0 16px,
+        mainPaddingSet: 0,
+        expendBg:url('~@/../src/assets/images/expend-bg.png'),
+        redeemBg: url("~@/../public/image/page/redeem/page-header-bg.png"),
+        checkboxBorder: #ffffff,
+        radioGroupShadow: -1px 0 0 0 #A08D79,
+        transferTopShadow: 0 -2px 4px 0 #f0f0f0,
+        infoAssetBg:url('~@/../src/assets/images/common/info-asset-web.png'),
+        infoleftDownBg:url('~@/../src/assets/images/common/info-right-down-web.png'),
+        infoleftTopBg:url('~@/../src/assets/images/common/info-left-top-web.png'),
+        
+    ),
+    client: (
+        A1: #2C2C2E,
+        A2: #38383B,
+        A2O1: rgba(56, 56, 59, .9),
+        A2h: #484238,
+        A3: #D4B883,
+        A3h: #DECEA8,
+        A4: #C0C0C0,
+        A5: #2C2C2E,
+        A6: #FFFFFF,
+        A6O1: rgba(255, 255, 255, .95),
+        A7: #2C2C2E,
+        A8: #838383,
+        A9O1: rgba(0, 0, 0, .6),
+        A9O2: rgba(0, 0, 0, .9),
+        A10: #D4B883,
+        A10O1: rgba(212, 183, 130, .25),
+        A10O2: rgba(212, 183, 130, .6),
+        A10h: #DECEA8,
+        A11: #313134,
+        A12: #38383B,
+        A13: #4E4E50,
+        A14: #4E4E50,
+        A14O1: rgba(78, 78, 80, .6),
+        A15: #C0C0C0,
+        A15O1: rgba(192, 192, 192, .6),
+        A16: #4E4E50,
+        A17: #838383,
+        A18: #DC4E37,
+        A18O1: rgba(220, 78, 55, .25),
+        A19: #50BB55,
+        A20: #FF5033,
+        A21: #C0C0C0,
+        A22: #843D32,
+        A23: #FB9B1E,
+        A23O1: rgba(251, 155, 30, .25),
+        A24: linear-gradient(to bottom right, #FFEECD 0%, #D4B883 100%),
+        A25: #9A7735,
+        A26: #C39B51,
+        A27: #D4B883,
+        A28: #E5D5B5,
+        A29: #FFFFFF,
+        // A30-A39是图表颜色，css里面不会用到
+        A30: #D4B883,
+        A31: #F6DEB0,
+        A32: #E7B65A,
+        A33: #ECDECC,
+        A34: #896A45,
+        A35: #CBAD8A,
+        A36: #867867,
+        A37: #F4BC82,
+        A38: #BDA786,
+        A39: #FDD6BD,
+        A40: #EFF2FC,
+        A41: #313134,
+        A42:#838383,
+        // ----------
+
+        // 最小宽度
+        mainMinWidth: 1033px,
+        mainPadding: 0,
+        mainPaddingSet: 0 16px,
+        expendBg: url('~@/../src/assets/images/expend-bg-client.png'),
+        redeemBg: url("~@/../public/image/page/redeem/page-header-bg-client.png"),
+        checkboxBorder: #D4B883,
+        radioGroupShadow: -1px 0 0 0 #D4B883,
+        transferTopShadow: 0 -2px 4px 0 #2c2c2e,
+        infoAssetBg:url('~@/../src/assets/images/common/info-asset-client.png'),
+        infoleftDownBg:url('~@/../src/assets/images/common/info-right-down-client.png'),
+        infoleftTopBg:url('~@/../src/assets/images/common/info-left-top-client.png'),
+    ),
+);
+
+@mixin color($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {color: $val !important;}
+                    @else {color: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin minWidth($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {min-width: $val !important;}
+                    @else {min-width: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin paddingSet($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {padding: $val !important;}
+                    @else {padding: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin backgroundColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {background-color: $val !important;}
+                    @else {background-color: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin backgroundImage($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {background-image: $val !important;}
+                    @else {background-image: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin borderImage($key, $important: 0, $after: '') {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-image: $val + $after!important;}
+                    @else {border-image: $val + $after}
+                }
+            }
+        }
+    }
+}
+
+@mixin backgroundSize($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {background-size: $val !important;}
+                    @else {background-size: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin borderColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-color: $val !important;}
+                    @else {border-color: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin borderArrColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-color: $val transparent transparent transparent !important;}
+                    @else {border-color: $val transparent transparent transparent}
+                }
+            }
+        }
+    }
+}
+
+@mixin borderTopColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-top-color: $val !important;}
+                    @else {border-top-color: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin borderBottomColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-bottom-color: $val !important;}
+                    @else {border-bottom-color: $val}
+                }
+            }
+        }
+    }
+}
+@mixin borderLeftColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-left-color: $val !important;}
+                    @else {border-left-color: $val}
+                }
+            }
+        }
+    }
+}
+@mixin borderRightColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {border-right-color: $val !important;}
+                    @else {border-right-color: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin outlineColor($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {outline-color: $val !important;}
+                    @else {outline-color: $val}
+                }
+            }
+        }
+    }
+}
+
+@mixin boxShadow($key, $important: 0) {
+    @each $theme-name, $theme-val in $color{
+        .theme-#{$theme-name} & {
+            @each $name, $val in $theme-val{
+                @if $name == $key {
+                    @if $important == 1 {box-shadow: $val !important;}
+                    @else {box-shadow: $val}
+                }
+            }
+        }
+    }
+}

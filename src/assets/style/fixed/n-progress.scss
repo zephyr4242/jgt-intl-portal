@@ -1,0 +1,11 @@
+#nprogress {
+  .bar {
+    @include backgroundColor(A3,1);
+  }
+  .peg {
+    box-shadow: 0 0 10px $color-primary, 0 0 5px $color-primary !important;
+  }
+  .spinner-icon{
+    display: none;
+  }
+}
